@@ -31,11 +31,8 @@ var app = new Framework7({
   
   var mainView = app.views.create('.view-main');
 
-  function downloadWallpaper(url) {
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'wallpaper';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
+  $$(document).on('page:init', '.page[data-name="apps"]', function (e) {
+    $$('.google-download').on('click', function() {
+      console.log("google download");
+    });
+  });  
