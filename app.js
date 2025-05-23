@@ -49,12 +49,14 @@ var app = new Framework7({
     document.body.removeChild(link);
   }
 
-  $$(document).on('page:init', '.page[data-name="apps"]', function (e) {
-    // Add click listener for wallpaper-download buttons inside this page
-    $$('.wallpaper-download').on('click', function (event) {
-      event.preventDefault();
-  
-      const imgSrc = $$(this).find('img').attr('src');
-      downloadWallpaper(imgSrc);
+  document.addEventListener('DOMContentLoaded', function () {
+    $$(document).on('page:init', '.page[data-name="apps"]', function (e) {
+      // Add click listener for wallpaper-download buttons inside this page
+      $$('.wallpaper-download').on('click', function (event) {
+        event.preventDefault();
+    
+        const imgSrc = $$(this).find('img').attr('src');
+        downloadWallpaper(imgSrc);
+      });
     });
-  });  
+  })
