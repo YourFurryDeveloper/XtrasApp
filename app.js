@@ -31,7 +31,7 @@ var app = new Framework7({
   
   var mainView = app.views.create('.view-main');
 
-  (document).on('page:init', '.page[data-name="apps"]', function (e) {
+  document.on('page:init', '.page[data-name="apps"]', function (e) {
     $$('.google-download').on('click', function() {
       console.log("google download");
     });
