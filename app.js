@@ -28,10 +28,10 @@ function downloadWallpaper(url) {
   document.body.removeChild(link);
 }
 
-$$(document).on('page:init', '.page[data-name="wallpapers"]', function (e) {
-  $$('.wallpaper-download').on('click', function (event) {
-    event.preventDefault();
-    const imgSrc = $$(this).find('img').attr('src');
-    downloadWallpaper(imgSrc);
-  });
+var $$ = Dom7;
+
+$$(document).on('click', '.page[data-name="wallpapers"] .wallpaper-download', function (e) {
+  e.preventDefault();
+  const imgSrc = $$(this).find('img').attr('src');
+  downloadWallpaper(imgSrc);
 });
