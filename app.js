@@ -28,7 +28,7 @@ function downloadWallpaper(url) {
   document.body.removeChild(link);
 }
 
-$$(document).on('page:init', '.page[data-name="apps"]', function (e) {
+$$(document).on('page:init', '.page[data-name="wallpapers"]', function (e) {
   $$('.wallpaper-download').on('click', function (event) {
     event.preventDefault();
     const imgSrc = $$(this).find('img').attr('src');
